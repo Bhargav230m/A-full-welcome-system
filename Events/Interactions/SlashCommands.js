@@ -1,6 +1,10 @@
-const { ChatInputCommandInteraction } = require("discord.js");
-const { EmbedBuilder } = require("discord.js");
-const { GuildMember, Embed, InteractionCollector } = require("discord.js");
+const {
+  EmbedBuilder,
+  GuildMember,
+  Embed,
+  InteractionCollector,
+  ChatInputCommandInteraction,
+} = require("discord.js");
 
 module.exports = {
   name: "interactionCreate",
@@ -18,16 +22,14 @@ module.exports = {
         ephemeral: true,
       });
     if (command) {
-      
     }
-   
+
     if (command.developer && interaction.user.id !== "890255508693454929")
       return interaction.reply({
         content: "This commands is only available to developers",
         ephemeral: true,
       });
 
-
-     command.execute(interaction, client);
+    command.execute(interaction, client);
   },
 };
